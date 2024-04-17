@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>metaGPT | Jason&#39;s Blog</title>
-  <meta name="keywords" content=" agent , code ">
-  <meta name="description" content="metaGPT | Jason&#39;s Blog">
+  <title>make-medio | Jason&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="make-medio | Jason&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介jiesheng， 就读于浙江某大学，目前研究方向为人工智能。 喜欢研究新兴技术和未来发展方向。 最近在调整自己的生活节奏。 联系方式QQ : 1030072717邮箱 : &#x6a;&#x69;&#x65;&#115;&#104;&#x65;&#110;&#103;&#x32;&#x30;&#48;&#49;&#48;&#x33;&#x40;&#103;&#x6d;&#97;&amp;#x69">
 <meta property="og:type" content="article">
@@ -445,9 +445,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-metaGPT" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-make-medio" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">metaGPT</h1>
+        <h1 class="article-title">make-medio</h1>
     
     <div class="article-meta">
         
@@ -457,29 +457,20 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="代码复现">代码复现</a>
+            <a  data-rel="自媒体">自媒体</a>
             
         </span>
         
         
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color1">agent</a>
-            
-            <a class="color5">code</a>
-            
-        </span>
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-04-17 20:42:58'>2024-04-17 20:42</time>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-04-17 19:54:37'>2023-11-14 23:59</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        <span>Count:508</span>
+        <span>Count:763</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -498,7 +489,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-text">操作过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E8%AF%B4%E8%BD%AC%E5%8A%A8%E6%BC%AB"><span class="toc-text">小说转动漫</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -514,17 +505,49 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><p>MetaGPT是一个先进的多智能体开源框架，专注于解决大模型落地应用的实际问题。它通过模拟软件公司进行软件设计、架构图、代码repo等功能。    </p>
-<span id="more"></span>
+        <h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><span id="more"></span>
 
-<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><ol>
-<li>metaGPT介绍<br>- Assign different roles to GPTs to form a collaborative software entity for complex tasks.<br>- MetaGPT takes a one line requirement as input and outputs user stories &#x2F; competitive analysis &#x2F; requirements &#x2F; data structures &#x2F; APIs &#x2F; documents, etc.<br>- Internally, MetaGPT includes product managers &#x2F; architects &#x2F; project managers &#x2F; engineers. It provides the entire process of a software company along with carefully orchestrated SOPs.  </li>
-<li>metaGPT复现<br>我首先部署到本地，具体步骤可参考<a target="_blank" rel="noopener" href="https://github.com/geekan/MetaGPT/blob/main/docs/README_CN.md">github</a>。我使用的是oepnAI的API（国内访问不了<a target="_blank" rel="noopener" href="https://api.openai.com/">接口地址</a>，推荐使用反代服务<a target="_blank" rel="noopener" href="https://openkey.cloud/docs">OpenKey</a>）。我花费大约0.1美元的成本成功生成了一个贪吃蛇的小游戏。</li>
-<li>个人心得<br>通过复现MetaGPT，我深切地体会到了科技发展的迅猛，简直就像是指数爆炸一样。从科研的角度来看，技术的更新换代速度太快，各种各样的模型层出不穷，以至于写论文的速度根本跟不上。从IT程序员的视角来看，MetaGPT已经替代了大部分程序员的代码编写工作，但目前还处于初级阶段，复杂的程序可能暂时还无法实现，不过由于项目已经开源，随着时间的推移，可能会产生意想不到的成果。对于人工智能公司来说，初创小公司如果没有自己独特的创新理念，那么肯定会在时代的洪流中被淘汰，但大型公司则不同，像OpenAI、阿里等巨头，凭借自身的底蕴，可以在这场竞争中生存下去，并不断壮大自己。从人类社会的角度来看，Agent未来真的有可能成为一个高级物种，成为社会的一员，那么“它”或者“他、她”究竟是朋友还是敌人呢？这仍是一个值得我们深思的问题。</li>
+<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>VPN</li>
+<li>小火花</li>
+<li>GPT（Claude）<ol>
+<li>登录<a target="_blank" rel="noopener" href="https://hotmail.com/">https://hotmail.com</a></li>
+<li>登录claude</li>
 </ol>
-  <div align="center">
-    <img src="metaGPT.png" style="width:100%; height:auto">
-  </div>
+</li>
+<li>今日头条&#x2F;小红书</li>
+</ol>
+<h2 id="操作过程"><a href="#操作过程" class="headerlink" title="操作过程"></a>操作过程</h2><ol>
+<li>找最火的头条进行抄袭</li>
+<li><img src="1.jpg" alt="1.jpg"></li>
+<li>请根据我提供的内容，充分学习理解文章中的内容以《       》为题写一篇1500人字以上的文章，基础直接讲主题，环环相扣，搬动生硬套，逻辑信号内容丰富！整体内容根据最新数据，然后再补充到2000字</li>
+<li>免责声明：文章描述过程、图片都来源于网络，此文章旨在倡导社会正能量，无低俗等不良引导。如涉及版权或者人物侵权问题，请及时联系我们，我们将第一时间删除内容！如有事件存疑部分，联系后即刻删除或作出更改。</li>
+<li>各位广大网友有什么想法，欢迎在下方评论区讨论❗</li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>找黑字多的标题（今日头条他有自动筛选，黑字多就是和你的标题不一样，争议高的）</li>
+<li>去找这种展现量好多的人的作品，然后关注一下，就会给你类似的人的!</li>
+<li>不能和别人内容重复，被查重复3次就被封号。</li>
+</ol>
+<h2 id="小说转动漫"><a href="#小说转动漫" class="headerlink" title="小说转动漫"></a>小说转动漫</h2><ol>
+<li>DS启动器配置</li>
+<li>拿到小说（申请小说授权并加入广告收益）<ol>
+<li>加入中视频计划</li>
+</ol>
+</li>
+<li>利用GPT改写文案，精简文案</li>
+<li>用GPT制作分镜，用表格对场景进行分析（prompt：请根据我提供的内容，将其改写为20个专业镜头语言）<br><img src="image.png" alt="alt text"></li>
+<li>用GPT提取关键词：我可以使用以下关键词来生成提示：人物主体特征、服饰穿搭、发型发色、五官特征、面部表情、肢体动作、场景特征、室内或者室外、大场景、小细节、环境光照、画幅视角(prompt：请根据我提供的镜头语言去详细描述内容并使用以下关键词来生成提示，只输出提示的具体内容，不要出现关键词：人物主体特征、服饰穿搭、发型发色、五官特征、面部表情、肢体动作、场景特征、室内或者室外、大场景、小细节、环境光照、画幅视角等。镜头语言：陆莺晗坐在公交车上,拿着报告单,脸色苍白,神情恍惚。输出格式可以参考：男孩,红格子衫,麦克风,老街,老房子,石子路,路灯,手舞足蹈,高声歌唱,行人,拍手,欢呼,小吃香味,流浪猫。)</li>
+<li>关键词转图片<ol>
+<li>同一个人物，在原来关键词的基础上添加关键词</li>
+<li>注意同一个人物随机数种子要保持一致</li>
+<li>不同人物换不同的lora</li>
+<li>转完图片之后记得另存为–001 002 003</li>
+</ol>
+</li>
+<li>（图片视频化:Stable Video Diffusion，它可以基于一张图片生成数秒钟的视频，效果比较惊艳，本文就给大家分享下如何安装和使用。）</li>
+<li>剪辑</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jiesheng200103@gmail.com </span>
