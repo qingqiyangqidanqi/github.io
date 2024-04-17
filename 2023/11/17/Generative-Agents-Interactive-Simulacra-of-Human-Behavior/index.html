@@ -13,17 +13,17 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="背景：一个可信赖的智能体可以增强交互式应用的效果，比如沉浸式环境和交互式交流的工具等。目的：引入了通用智能体去模拟人类社会的交互行为，同时为了确保生成式智能体的可靠性，该文章描述了智能体的框架，并做出了可信任的评价结果。结论：该智能体框架对agent行为的可信性有重要贡献，通过融合LLM和agent，本文引入了架构和交互模式，以实现对人类行为的可信的智能体模拟。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/architecture.png">
-<meta property="og:image" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/memory%20and%20rerieval.png">
-<meta property="og:image" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/reflection.png">
-<meta property="og:image" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/architecture.png">
+<meta property="og:image" content="http://example.com/.com//architecture.png">
+<meta property="og:image" content="http://example.com/.com//memory%20and%20rerieval.png">
+<meta property="og:image" content="http://example.com/.com//reflection.png">
+<meta property="og:image" content="http://example.com/.com//architecture.png">
 <meta property="article:published_time" content="2023-11-16T16:12:01.000Z">
 <meta property="article:modified_time" content="2024-01-25T12:37:30.418Z">
 <meta property="article:author" content="jiesheng">
 <meta property="article:tag" content="paper">
 <meta property="article:tag" content="agent">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/architecture.png">
+<meta name="twitter:image" content="http://example.com/.com//architecture.png">
   
     <link rel="alternate" href="/atom.xml" title="Jason's Blog" type="application/atom+xml">
   
@@ -123,20 +123,20 @@
 <h4 id="自我想法（1个思路，3个绘图）"><a href="#自我想法（1个思路，3个绘图）" class="headerlink" title="自我想法（1个思路，3个绘图）"></a>自我想法（1个思路，3个绘图）</h4><ul>
 <li>1个思路：先通过设计一个框架进行Agent整体的介绍和设计思路，之后通过实验（模拟人类社区的沙盒世界）去证明智能体的可信性，之后通过两个评估阶段去评估智能体的能力和局限性，然后就未来的应用场景、局限性和社会风险做出讨论，最后总结全文。</li>
 <li>3个图表<ul>
-<li>picture1: 智能体架构。智能体感知他们的环境，所有感知都保存在智能体经验的综合记录中，称为记忆流。根据他们的感知，该架构检索相关记忆并使用这些检索到的动作来确定动作。这些检索到的记忆还用于形成长期计划并创建更高级别的反思，这两者都被输入到记忆流中以供将来使用。<div align=center>
-    <img src='./Generative-Agents-Interactive-Simulacra-of-Human-Behavior/architecture.png' style="width:100%; height:auto">
+<li>picture1: 智能体架构。智能体感知他们的环境，所有感知都保存在智能体经验的综合记录中，称为记忆流。根据他们的感知，该架构检索相关记忆并使用这些检索到的动作来确定动作。这些检索到的记忆还用于形成长期计划并创建更高级别的反思，这两者都被输入到记忆流中以供将来使用。<div align="center">
+    <img src="/.com//architecture.png" style="width:100%; height:auto">
 </div></li>
-<li>picture2: 第一种类型的记忆：检索。该架构实现了一个检索函数（score &#x3D; αrecency · recency + αimportance · importance + αrelevance · relevance），该函数将代理的当前情况作为输入，并返回内存流的子集以传递给语言模型，同时利用rececy,importance和relevance作为参数并分配权重，最终得出结论。<div align=center>
-    <img src='./Generative-Agents-Interactive-Simulacra-of-Human-Behavior/memory and rerieval.png' style="width:100%; height:auto">
+<li>picture2: 第一种类型的记忆：检索。该架构实现了一个检索函数（score &#x3D; αrecency · recency + αimportance · importance + αrelevance · relevance），该函数将代理的当前情况作为输入，并返回内存流的子集以传递给语言模型，同时利用rececy,importance和relevance作为参数并分配权重，最终得出结论。<div align="center">
+    <img src="/.com//memory and rerieval.png" style="width:100%; height:auto">
 </div></li>
-<li>picture3：第二种类型的记忆：反思（通过小概念去总结，使得记忆变得更加抽象和更高层次）。当代理感知到的最新事件的重要性分数总和超过阈值（在我们的实现中为 150）时，会反思。<div align=center>
-    <img src='./Generative-Agents-Interactive-Simulacra-of-Human-Behavior/reflection.png' style="width:100%; height:auto">
+<li>picture3：第二种类型的记忆：反思（通过小概念去总结，使得记忆变得更加抽象和更高层次）。当代理感知到的最新事件的重要性分数总和超过阈值（在我们的实现中为 150）时，会反思。<div align="center">
+    <img src="/.com//reflection.png" style="width:100%; height:auto">
 </div></li>
 </ul>
 </li>
 </ul>
 <hr>
-<h4 id="生成式智能体的框架"><a href="#生成式智能体的框架" class="headerlink" title="生成式智能体的框架"></a>生成式智能体的框架</h4><p>具体包括 1.Memory and Retrieval. 2.Reflection. 3.Planning and Reacting.<br>    <div align=center><br>        <img src='./Generative-Agents-Interactive-Simulacra-of-Human-Behavior/architecture.png' style="width:100%; height:auto"><br>    </div></p>
+<h4 id="生成式智能体的框架"><a href="#生成式智能体的框架" class="headerlink" title="生成式智能体的框架"></a>生成式智能体的框架</h4><p>具体包括 1.Memory and Retrieval. 2.Reflection. 3.Planning and Reacting.<br>    <div align="center"><br>        <img src="/.com//architecture.png" style="width:100%; height:auto"><br>    </div></p>
 <h4 id="对智能体的能力和局限性进行评估"><a href="#对智能体的能力和局限性进行评估" class="headerlink" title="对智能体的能力和局限性进行评估"></a>对智能体的能力和局限性进行评估</h4><p>在评估中，考察了智能体的能力和局限性。单个智能体是否正确地检索过去的经验，并产生可信的计划、反应和想法来塑造他们的行为?一个智能体社区是否表现出跨越社区的信息扩散、关系构建和行动者协调?我们分两个阶段对生成主体进行评估。  </p>
 <ol>
 <li>首先从一个更严格的控制评估开始，从五个方面评估单个智能体的反应，以了解他们是否在狭义的环境中产生可信的行为。<ul>
@@ -169,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/" data-id="clv3o2x6k0008o0vyemq78k09" data-title="Generative Agents: Interactive Simulacra of Human Behavior" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/" data-id="clv3on4a70007v8vy13mx2qd4" data-title="Generative Agents: Interactive Simulacra of Human Behavior" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
