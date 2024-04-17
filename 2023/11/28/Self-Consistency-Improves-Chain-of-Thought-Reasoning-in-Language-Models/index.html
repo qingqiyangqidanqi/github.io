@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models | Jason&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="文章等级  机器学习领域的会议论文（评论说含金量较高） 标题、作者（单位）、期刊、发表年份  Self-Consistency Improves Chain of Thought Reasoning in Language Models  WangXuezhi  ICLR2023  2023-3 研究问题（背景、目的及结论）  背景：结合COT的大语言模型能够更好的完成任务，COT的有效方法很重要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models">
+<meta property="og:url" content="http://example.com/2023/11/28/Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="文章等级  机器学习领域的会议论文（评论说含金量较高） 标题、作者（单位）、期刊、发表年份  Self-Consistency Improves Chain of Thought Reasoning in Language Models  WangXuezhi  ICLR2023  2023-3 研究问题（背景、目的及结论）  背景：结合COT的大语言模型能够更好的完成任务，COT的有效方法很重要">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-27T16:43:10.000Z">
+<meta property="article:modified_time" content="2024-01-25T12:38:08.910Z">
+<meta property="article:author" content="jiesheng">
+<meta property="article:tag" content="paper">
+<meta property="article:tag" content="cot">
+<meta property="article:tag" content="agent">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Jason's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Jason&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Make Agent our friend, not our enemy!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/28/Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models/" class="article-date">
+  <time class="dt-published" datetime="2023-11-27T16:43:10.000Z" itemprop="datePublished">2023-11-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="文章等级"><a href="#文章等级" class="headerlink" title="文章等级"></a>文章等级</h4><p>  机器学习领域的会议论文（评论说含金量较高）</p>
+<h4 id="标题、作者（单位）、期刊、发表年份"><a href="#标题、作者（单位）、期刊、发表年份" class="headerlink" title="标题、作者（单位）、期刊、发表年份"></a>标题、作者（单位）、期刊、发表年份</h4><p>  Self-Consistency Improves Chain of Thought Reasoning in Language Models<br>  WangXuezhi<br>  ICLR2023<br>  2023-3</p>
+<h4 id="研究问题（背景、目的及结论）"><a href="#研究问题（背景、目的及结论）" class="headerlink" title="研究问题（背景、目的及结论）"></a>研究问题（背景、目的及结论）</h4><p>  <strong>背景</strong>：结合COT的大语言模型能够更好的完成任务，COT的有效方法很重要，本文就此提出了SC这个方法。<strong>目的</strong>：在COT的具体实现方法中，本文提出了新的编码策略“self-consistency”，通过SC去替代本来的“greedy decoding”方法，它简化了推理路径，并且选择了最相容的答案，SC利用了一种直觉（一个复杂问题的推理通常有多重不同的思维，但是却指向其唯一正确的答案）。<strong>结论</strong>：本文通过SC方法对多个大语言模型进行实验数据测试，提升效果明显。</p>
+<span id="more"></span>
+<h4 id="总结（结果与讨论）"><a href="#总结（结果与讨论）" class="headerlink" title="总结（结果与讨论）"></a>总结（结果与讨论）</h4><p>  本文介绍了SC这个简单有效地方法，并且此方法显著的提升了大语言模型的推理任务的准确性（通过对四个LLM模型的测试）。本文限制：SC导致的计算开销变大；SC只能适用于解决具有固定答案的问题，无法解决开放式文本生成问题。下一步的工作是解决LLM的生成不准确问题。</p>
+<h4 id="文章好在哪里？（创新点）"><a href="#文章好在哪里？（创新点）" class="headerlink" title="文章好在哪里？（创新点）"></a>文章好在哪里？（创新点）</h4><ol>
+<li>这个文章选的点很新，是COT方向的方法。</li>
+<li>这篇文章通过与greedy decoding对比，对多个LLM模型测试，显著提升了效果，数据明显。</li>
+</ol>
+<h4 id="自我想法（1个思路，2个绘图，5个句式）"><a href="#自我想法（1个思路，2个绘图，5个句式）" class="headerlink" title="自我想法（1个思路，2个绘图，5个句式）"></a>自我想法（1个思路，2个绘图，5个句式）</h4><ul>
+<li>1个思路：<ul>
+<li>第一，本文先通过引言介绍了COT的背景知识，并引入了greedy decoding作为对比，在此基础上提出了SC方法；</li>
+<li>第二，然后详细介绍了SC的方法基本过程，并拿出PaLM-540B模型作为参考示例；</li>
+<li>第三，之后在实验过程，拿多类数据和四个模型作为实验，对比了greedy decoding 和 SC方法的正确率，同时将算数推理和常识推理的部分作为主要工作，同时指出了SC方法对COT不足之处的补进，同时与其他的COT方法对比且提出了推理路径数目与效果图；</li>
+<li>第四，在相关工作部分介绍了自己的工作量；</li>
+<li>第五，最后结论与讨论；</li>
+<li>第六，在可恢复声明中指明了数据来源，并在附录部分指出了额外的工作内容与相关图表数据。</li>
+</ul>
+</li>
+<li>2个图表：<ul>
+<li>picture1:self-consistency方法和greedy decode方法 <div align = "center">
+  <img src = "Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models/figure1.png" style="width:100%;height:auto">
+ </div></li>
+<li>table1: Accuracy comparison of different answer aggregation strategies on PaLM-540B, GSM8K等是输入的提示词数据集（问题和答案），Greedy decode 是结合策略，数字是准确度。<div align = "center">
+  <img src = "Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models/table1.png" style="width:100%;height:auto">
+</div></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="marginalization"><a href="#marginalization" class="headerlink" title="marginalization"></a>marginalization</h4><p>  本文提到了概率论的“边缘化”的概念。（边缘化是一种通过累加一个变量的可能值以判定另一个变量的边缘分布的方法。）</p>
+<h4 id="数据集和模型"><a href="#数据集和模型" class="headerlink" title="数据集和模型"></a>数据集和模型</h4><p>data sets：</p>
+<ul>
+<li>GSM8K</li>
+<li>SVAMP</li>
+<li>AQuA</li>
+<li>StrategyQA</li>
+<li>ARCchallenge</li>
+</ul>
+<p>models:</p>
+<ul>
+<li>UL2-20B</li>
+<li>GPT-3-175B</li>
+<li>LaMDA-137B</li>
+<li>PaLM-540B</li>
+</ul>
+<h4 id="Table2-and-Table3"><a href="#Table2-and-Table3" class="headerlink" title="Table2 and Table3"></a>Table2 and Table3</h4>  <div align = "center">
+      <img src = "Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models/table2andtable3.png" style="width:100%;height:auto">
+    </div>
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/11/28/Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models/" data-id="clv3o2x6o000so0vyhts29ebt" data-title="Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/agent/" rel="tag">agent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cot/" rel="tag">cot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paper/" rel="tag">paper</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/12/21/Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Generative Agents: Interactive Simulacra of Human Behavior</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/agent/" rel="tag">agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/code/" rel="tag">code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cot/" rel="tag">cot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paper/" rel="tag">paper</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/agent/" style="font-size: 20px;">agent</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/cot/" style="font-size: 10px;">cot</a> <a href="/tags/paper/" style="font-size: 15px;">paper</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/31/AI-Agent/">AI Agent</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/31/Linux/">Linux</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/29/AppAgent/">appAgent</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/25/AppAgent-Multimodal-Agents-as-Smartphone-Users/">AppAgent: Multimodal Agents as Smartphone Users</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/21/Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought/">Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 jiesheng<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Generative Agents: Interactive Simulacra of Human Behavior | Jason&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="背景：一个可信赖的智能体可以增强交互式应用的效果，比如沉浸式环境和交互式交流的工具等。目的：引入了通用智能体去模拟人类社会的交互行为，同时为了确保生成式智能体的可靠性，该文章描述了智能体的框架，并做出了可信任的评价结果。结论：该智能体框架对agent行为的可信性有重要贡献，通过融合LLM和agent，本文引入了架构和交互模式，以实现对人类行为的可信的智能体模拟。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Generative Agents: Interactive Simulacra of Human Behavior">
+<meta property="og:url" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="背景：一个可信赖的智能体可以增强交互式应用的效果，比如沉浸式环境和交互式交流的工具等。目的：引入了通用智能体去模拟人类社会的交互行为，同时为了确保生成式智能体的可靠性，该文章描述了智能体的框架，并做出了可信任的评价结果。结论：该智能体框架对agent行为的可信性有重要贡献，通过融合LLM和agent，本文引入了架构和交互模式，以实现对人类行为的可信的智能体模拟。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/architecture.png">
+<meta property="og:image" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/memory%20and%20rerieval.png">
+<meta property="og:image" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/reflection.png">
+<meta property="og:image" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/architecture.png">
+<meta property="article:published_time" content="2023-11-16T16:12:01.000Z">
+<meta property="article:modified_time" content="2024-01-25T12:37:30.418Z">
+<meta property="article:author" content="jiesheng">
+<meta property="article:tag" content="paper">
+<meta property="article:tag" content="agent">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/architecture.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Jason's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Jason&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Make Agent our friend, not our enemy!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Generative-Agents-Interactive-Simulacra-of-Human-Behavior" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/" class="article-date">
+  <time class="dt-published" datetime="2023-11-16T16:12:01.000Z" itemprop="datePublished">2023-11-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Generative Agents: Interactive Simulacra of Human Behavior
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="文章等级"><a href="#文章等级" class="headerlink" title="文章等级"></a>文章等级</h4><p>预印本</p>
+<h4 id="标题、作者（单位）、期刊、发表年份"><a href="#标题、作者（单位）、期刊、发表年份" class="headerlink" title="标题、作者（单位）、期刊、发表年份"></a>标题、作者（单位）、期刊、发表年份</h4><p>Generative Agents: Interactive Simulacra of Human Behavior<br>Joon Sung Park(Stanford University)<br>arxiv<br>2023-4</p>
+<h4 id="研究问题（背景、目的及结论）"><a href="#研究问题（背景、目的及结论）" class="headerlink" title="研究问题（背景、目的及结论）"></a>研究问题（背景、目的及结论）</h4><p><strong>背景：</strong> 一个可信赖的智能体可以增强交互式应用的效果，比如沉浸式环境和交互式交流的工具等。<strong>目的：</strong> 引入了通用智能体去模拟人类社会的交互行为，同时为了确保生成式智能体的可靠性，该文章描述了智能体的框架，并做出了可信任的评价结果。<strong>结论：</strong> 该智能体框架对agent行为的可信性有重要贡献，通过融合LLM和agent，本文引入了架构和交互模式，以实现对人类行为的可信的智能体模拟。  </p>
+<span id="more"></span>
+<h4 id="总结（结果与讨论）"><a href="#总结（结果与讨论）" class="headerlink" title="总结（结果与讨论）"></a>总结（结果与讨论）</h4><p>本文引入了生成式智能体，模拟人类行为的交互式智能体。</p>
+<ol>
+<li>首先该文章设计了一个智能体的体系结构。</li>
+<li>之后该文章在沙盒世界利用智能体模拟人类的社会。</li>
+<li>通过两种评估方式表现该架构是可信的。</li>
+<li>展望未来，生成式智能体可以在未来很多地方应用，从工具到社会计算系统，还有沉浸式环境。</li>
+</ol>
+<h4 id="文章好在哪里？（创新点）"><a href="#文章好在哪里？（创新点）" class="headerlink" title="文章好在哪里？（创新点）"></a>文章好在哪里？（创新点）</h4><ol>
+<li>本文提出了Agent的整体框架，并就“记忆”分成了“检索记忆”以及更高层面的“反思”两个阶段。</li>
+<li>评估手段介入了人工进行对比，最后的评估结果显得更加准确。</li>
+<li>同时介入了社会人文学科的内容（Agent对伦理和社会的影响），这种思路是不是可以应用在“教育”方面？</li>
+</ol>
+<h4 id="自我想法（1个思路，3个绘图）"><a href="#自我想法（1个思路，3个绘图）" class="headerlink" title="自我想法（1个思路，3个绘图）"></a>自我想法（1个思路，3个绘图）</h4><ul>
+<li>1个思路：先通过设计一个框架进行Agent整体的介绍和设计思路，之后通过实验（模拟人类社区的沙盒世界）去证明智能体的可信性，之后通过两个评估阶段去评估智能体的能力和局限性，然后就未来的应用场景、局限性和社会风险做出讨论，最后总结全文。</li>
+<li>3个图表<ul>
+<li>picture1: 智能体架构。智能体感知他们的环境，所有感知都保存在智能体经验的综合记录中，称为记忆流。根据他们的感知，该架构检索相关记忆并使用这些检索到的动作来确定动作。这些检索到的记忆还用于形成长期计划并创建更高级别的反思，这两者都被输入到记忆流中以供将来使用。<div align=center>
+    <img src='./Generative-Agents-Interactive-Simulacra-of-Human-Behavior/architecture.png' style="width:100%; height:auto">
+</div></li>
+<li>picture2: 第一种类型的记忆：检索。该架构实现了一个检索函数（score &#x3D; αrecency · recency + αimportance · importance + αrelevance · relevance），该函数将代理的当前情况作为输入，并返回内存流的子集以传递给语言模型，同时利用rececy,importance和relevance作为参数并分配权重，最终得出结论。<div align=center>
+    <img src='./Generative-Agents-Interactive-Simulacra-of-Human-Behavior/memory and rerieval.png' style="width:100%; height:auto">
+</div></li>
+<li>picture3：第二种类型的记忆：反思（通过小概念去总结，使得记忆变得更加抽象和更高层次）。当代理感知到的最新事件的重要性分数总和超过阈值（在我们的实现中为 150）时，会反思。<div align=center>
+    <img src='./Generative-Agents-Interactive-Simulacra-of-Human-Behavior/reflection.png' style="width:100%; height:auto">
+</div></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="生成式智能体的框架"><a href="#生成式智能体的框架" class="headerlink" title="生成式智能体的框架"></a>生成式智能体的框架</h4><p>具体包括 1.Memory and Retrieval. 2.Reflection. 3.Planning and Reacting.<br>    <div align=center><br>        <img src='./Generative-Agents-Interactive-Simulacra-of-Human-Behavior/architecture.png' style="width:100%; height:auto"><br>    </div></p>
+<h4 id="对智能体的能力和局限性进行评估"><a href="#对智能体的能力和局限性进行评估" class="headerlink" title="对智能体的能力和局限性进行评估"></a>对智能体的能力和局限性进行评估</h4><p>在评估中，考察了智能体的能力和局限性。单个智能体是否正确地检索过去的经验，并产生可信的计划、反应和想法来塑造他们的行为?一个智能体社区是否表现出跨越社区的信息扩散、关系构建和行动者协调?我们分两个阶段对生成主体进行评估。  </p>
+<ol>
+<li>首先从一个更严格的控制评估开始，从五个方面评估单个智能体的反应，以了解他们是否在狭义的环境中产生可信的行为。<ul>
+<li>maintaining self-knowledge</li>
+<li>retrieving memory</li>
+<li>reacting</li>
+<li>reflecting</li>
+</ul>
+</li>
+<li>然后，对智能体社区的进行端到端的分析，从三个方面考察他们作为一个集体的涌现行为，以及错误和边界条件。<ul>
+<li>information diffusion</li>
+<li>relationship formation</li>
+<li>agent coordination</li>
+</ul>
+</li>
+</ol>
+<h4 id="Agent的未来应用、局限性和社会风险进行讨论"><a href="#Agent的未来应用、局限性和社会风险进行讨论" class="headerlink" title="Agent的未来应用、局限性和社会风险进行讨论"></a>Agent的未来应用、局限性和社会风险进行讨论</h4><ol>
+<li>Applications of Generative Agents<ul>
+<li>基于长期经验的人类行为模拟中受益的领域，比如在线论坛中生成对话线程，以及虚拟现实元组与社交机器人。</li>
+<li>在以人为中心的领域，通过智能体去作为用户的代理去模拟用户，可以更深入地了解用户的需求和偏好，从而产生更加个性化和有效的技术体验。</li>
+</ul>
+</li>
+<li>Future Work and Limitations<ul>
+<li>在这篇文章的工作中，引入了生成式代理，并对其体系结构进行了初步的实现和评估。未来的研究可以在所提出的代理架构的基础上进行改进，并进一步评估其性能。</li>
+</ul>
+</li>
+<li>Ethics and Societal Impact</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/" data-id="clv3o2x6k0008o0vyemq78k09" data-title="Generative Agents: Interactive Simulacra of Human Behavior" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/agent/" rel="tag">agent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paper/" rel="tag">paper</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/28/Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/14/metaGPT/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">metaGPT</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/agent/" rel="tag">agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/code/" rel="tag">code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cot/" rel="tag">cot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paper/" rel="tag">paper</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/agent/" style="font-size: 20px;">agent</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/cot/" style="font-size: 10px;">cot</a> <a href="/tags/paper/" style="font-size: 15px;">paper</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/31/AI-Agent/">AI Agent</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/31/Linux/">Linux</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/29/AppAgent/">appAgent</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/25/AppAgent-Multimodal-Agents-as-Smartphone-Users/">AppAgent: Multimodal Agents as Smartphone Users</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/21/Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought/">Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 jiesheng<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

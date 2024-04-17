@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Linux | Jason&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="摘要Linux基本操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="http://example.com/2024/01/31/Linux/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="摘要Linux基本操作">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/Linux/image1.png">
+<meta property="article:published_time" content="2024-01-31T07:37:20.000Z">
+<meta property="article:modified_time" content="2024-01-31T11:23:05.428Z">
+<meta property="article:author" content="jiesheng">
+<meta property="article:tag" content="Agent; blog; LLM; GPT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/Linux/image1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Jason's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Jason&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Make Agent our friend, not our enemy!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/01/31/Linux/" class="article-date">
+  <time class="dt-published" datetime="2024-01-31T07:37:20.000Z" itemprop="datePublished">2024-01-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Linux
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>Linux基本操作</p>
+<span id="more"></span>
+
+<h3 id="1-su进入用户"><a href="#1-su进入用户" class="headerlink" title="1.su进入用户"></a>1.su进入用户</h3><p>su - 用户<br>输入密码</p>
+<h3 id="2-Linux用户及用户组"><a href="#2-Linux用户及用户组" class="headerlink" title="2.Linux用户及用户组"></a>2.Linux用户及用户组</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">groupadd 用户组名           <span class="comment"># 创建用户组</span></span><br><span class="line">groupdel 用户组名           <span class="comment"># 删除用户组</span></span><br><span class="line">useradd [-g -d]  用户名     <span class="comment"># 创建用户,-g指定用户组，-d指定用户HOME路径  </span></span><br><span class="line">userdel [-r] 用户名         <span class="comment"># 删除用户，-r连同删除用户的HOME目录</span></span><br><span class="line"><span class="built_in">id</span> [用户名]                 <span class="comment"># 查看用户，如果不提供用户名则查看自身</span></span><br><span class="line">usermod -aG 用户组 用户名   <span class="comment"># 将指定用户加入指定用户组</span></span><br><span class="line">getent passwd/group        <span class="comment"># passwd查看所有用户，group查看所有组</span></span><br><span class="line">```  </span><br><span class="line"><span class="comment">### 3.查看权限控制信息</span></span><br><span class="line">ls -l</span><br><span class="line">![Alt text](./Linux/image.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">### 4.修改权限</span></span><br><span class="line">```python</span><br><span class="line">chmod [-R] 权限 文件或文件夹    <span class="comment">#修改文件/文件夹的权限信息，-R是对文件夹内的全部内容应用同样的操作【只有所属用户和root可以修改】</span></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">chmod -R u=rwx,g=rx,o=x hello.txt <span class="comment"># 将文件权限修改为：rwxr-x--x,其中分别为user，group，other</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">chown [-R] [用户][:][用户组] 文件或文件夹 <span class="comment"># 修改文件/文件夹的所属用户和用户组，：用于分割用户和用户组【只有root可以修改】</span></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">chown root hello.txt        <span class="comment"># 只修改用户</span></span><br><span class="line">chown :root hello.txt       <span class="comment"># 只修改组</span></span><br><span class="line">chown -R root:zjgsu test.txt</span><br></pre></td></tr></table></figure>
+<p>也可以用数字代表权限 eg:chmod 751 1.txt<br><img src="/./Linux/image1.png" alt="Alt text"></p>
+<h3 id="5-给学校Linux划分用户"><a href="#5-给学校Linux划分用户" class="headerlink" title="5.给学校Linux划分用户"></a>5.给学校Linux划分用户</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 登录root用户</span></span><br><span class="line"><span class="comment"># 创建用户组并查看</span></span><br><span class="line">groupadd zjgsu</span><br><span class="line">getent group</span><br><span class="line"><span class="comment"># 创建用户并查看</span></span><br><span class="line">useradd -d /home/xx -s /<span class="built_in">bin</span>/bash -m -g zjgsu xxx</span><br><span class="line">getent passwd</span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line">passwd xx</span><br><span class="line"><span class="comment"># 设置权限</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置环境变量</span></span><br><span class="line"><span class="comment">#使用你喜欢的编辑器打开 /etc/environment，将安装目录 /opt/anaconda3/bin 加入 PATH 路径中</span></span><br><span class="line">PATH=<span class="string">&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/anaconda3/bin:&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">vim ~/.bashrc</span><br><span class="line">最后一行加入：export PATH=<span class="string">&quot;/root/anaconda3/bin:$PATH&quot;</span></span><br><span class="line">改好之后，按键盘左上角的Esc键，退出vim编辑。</span><br><span class="line">输出:wq（保存并退出）</span><br><span class="line">输入：source ~/.bashrc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 其他用户使用root用户安装的anaconda</span></span><br><span class="line">首先，root用户安装anaconda的时候，需要安装在普通用户可以访问的目录下</span><br><span class="line">其次，普通用户登陆后，需要执行以下conda init 使conda的路径等系统环境变量信息写入当前用户的bashrc下</span><br><span class="line">/root/anaconda3/<span class="built_in">bin</span>/conda init bash</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/01/31/Linux/" data-id="clv3o2x6l000ao0vye76m69ya" data-title="Linux" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/01/31/AI-Agent/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AI Agent
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/01/29/AppAgent/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">appAgent</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/agent/" rel="tag">agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/code/" rel="tag">code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cot/" rel="tag">cot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paper/" rel="tag">paper</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/agent/" style="font-size: 20px;">agent</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/cot/" style="font-size: 10px;">cot</a> <a href="/tags/paper/" style="font-size: 15px;">paper</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/31/AI-Agent/">AI Agent</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/31/Linux/">Linux</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/29/AppAgent/">appAgent</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/25/AppAgent-Multimodal-Agents-as-Smartphone-Users/">AppAgent: Multimodal Agents as Smartphone Users</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/21/Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought/">Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 jiesheng<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
