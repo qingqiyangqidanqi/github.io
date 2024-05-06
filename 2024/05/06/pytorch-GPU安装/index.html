@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Meta-Learning for Low-Resource Neural Machine Translation | Jason&#39;s Blog</title>
-  <meta name="keywords" content=" paper ">
-  <meta name="description" content="Meta-Learning for Low-Resource Neural Machine Translation | Jason&#39;s Blog">
+  <title>pytorch-GPU安装 | Jason&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="pytorch-GPU安装 | Jason&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="摘要pytorch-GPU版本安装教程。">
 <meta property="og:type" content="article">
@@ -634,9 +634,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Meta-Learning-for-Low-Resource-Neural-Machine-Translation" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-pytorch-GPU安装" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Meta-Learning for Low-Resource Neural Machine Translation</h1>
+        <h1 class="article-title">pytorch-GPU安装</h1>
     
     <div class="article-meta">
         
@@ -646,27 +646,20 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="文章阅读">文章阅读</a>
+            <a  data-rel="资源共享">资源共享</a>
             
         </span>
         
         
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color1">paper</a>
-            
-        </span>
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-05-06 18:06:05'>2024-05-06 18:04</time>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-04-23 17:20:01'>2024-04-18 18:54</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        <span>Count:634</span>
+        <span>Count:28</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -685,7 +678,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E7%AD%89%E7%BA%A7"><span class="toc-text">文章等级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E3%80%81%E4%BD%9C%E8%80%85%EF%BC%88%E5%8D%95%E4%BD%8D%EF%BC%89%E3%80%81%E6%9C%9F%E5%88%8A%E3%80%81%E5%8F%91%E8%A1%A8%E5%B9%B4%E4%BB%BD"><span class="toc-text">标题、作者（单位）、期刊、发表年份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98%EF%BC%88%E8%83%8C%E6%99%AF%E3%80%81%E7%9B%AE%E7%9A%84%E5%8F%8A%E7%BB%93%E8%AE%BA%EF%BC%89"><span class="toc-text">研究问题（背景、目的及结论）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%88%E7%BB%93%E6%9E%9C%E4%B8%8E%E8%AE%A8%E8%AE%BA%EF%BC%89"><span class="toc-text">总结（结果与讨论）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%87%E6%8A%A5PPT%E5%86%85%E5%AE%B9"><span class="toc-text">汇报PPT内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%8F%82%E8%80%83"><span class="toc-text">相关参考</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -701,57 +694,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="文章等级"><a href="#文章等级" class="headerlink" title="文章等级"></a>文章等级</h4><p>EMNLP 2018（CCF B类）<br>NLP领域四大顶会之一</p>
-<h4 id="标题、作者（单位）、期刊、发表年份"><a href="#标题、作者（单位）、期刊、发表年份" class="headerlink" title="标题、作者（单位）、期刊、发表年份"></a>标题、作者（单位）、期刊、发表年份</h4><p>Meta-Learning for Low-Resource Neural Machine Translation<br>Gu Jiatao(The University of Hong Kong)<br>Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing<br>2018</p>
-<h4 id="研究问题（背景、目的及结论）"><a href="#研究问题（背景、目的及结论）" class="headerlink" title="研究问题（背景、目的及结论）"></a>研究问题（背景、目的及结论）</h4><p>在本文中，我们建议将最近推出的模型不可知元学习算法（MAML，Finn et al.，2017）扩展到低资源神经机器翻译（NMT）。我们将低资源翻译框架为一个元学习问题，并基于多语言高资源语言任务学习适应低资源语言。我们使用通用词汇表征（顾等人，2018b）来克服不同语言之间的输入输出不匹配。我们使用18种欧洲语言（Bg、Cs、Da、De、El、Es、Et、Fr、Hu、It、Lt、Nl、Pl、Pt、Sk、Sl、Sv和Ru）作为源任务，使用5种不同的语言（Ro、Lv、Fi、Tr和Ko）作为目标任务来评估所提出的元学习策略。我们表明，所提出的方法显著优于基于多语言迁移学习的方法（Zoph等人，2016年），并使我们能够仅用一小部分训练示例来训练有竞争力的NMT系统。例如，所提出的方法可以在罗马尼亚语——英语WMT’16上通过仅看到16,000个翻译单词（^600个平行句子）实现高达22.04 BLEU。</p>
+        <h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><p>pytorch-GPU版本安装教程。</p>
 <span id="more"></span>
-<h4 id="总结（结果与讨论）"><a href="#总结（结果与讨论）" class="headerlink" title="总结（结果与讨论）"></a>总结（结果与讨论）</h4><p>在本文中，我们提出了一种用于低资源神经机器翻译的元学习算法，该算法利用了高资源语言对的可用性。我们将所提出的算法基于最近提出的与模型无关的元学习，并使用通用词汇表示技术使其适用于不共享公共词汇的多种语言，从而产生元学习。我们使用18个高资源源任务和5个低资源目标任务的广泛评估表明，在所考虑的所有语言对中，所提出的元机器翻译在低资源神经机器翻译中显著优于现有的多语言迁移学习方法。<br>所提出的方法为神经机器翻译开辟了新的机遇。首先，它是一个整合各种额外数据源的原则性框架，如源侧和目标侧单语语料库。第二，它是一个通用的框架，可以很容易地适应现有的和未来的神经机器翻译系统。</p>
-<h4 id="汇报PPT内容"><a href="#汇报PPT内容" class="headerlink" title="汇报PPT内容"></a>汇报PPT内容</h4>  <div align="center">
-        <img src="幻灯片1.PNG" style="width:100%; height:auto">  
-  </div>  
-    <div align="center">
-        <img src="幻灯片2.PNG" style="width:100%; height:auto">  
-  </div>  
-    <div align="center">
-        <img src="幻灯片3.PNG" style="width:100%; height:auto">  
-  </div>  
-    <div align="center">
-        <img src="幻灯片4.PNG" style="width:100%; height:auto">  
-  </div>  
-    <div align="center">
-        <img src="幻灯片5.PNG" style="width:100%; height:auto">  
-  </div>  
-    <div align="center">
-        <img src="幻灯片6.PNG" style="width:100%; height:auto">  
-  </div>  
-    <div align="center">
-        <img src="幻灯片7.PNG" style="width:100%; height:auto">  
-  </div>  
-    <div align="center">
-        <img src="幻灯片8.PNG" style="width:100%; height:auto">  
-  </div>  
-  <div align="center">
-        <img src="幻灯片9.PNG" style="width:100%; height:auto">  
-  </div>  
-  <div align="center">
-        <img src="幻灯片10.PNG" style="width:100%; height:auto">  
-  </div>  
-  <div align="center">
-        <img src="幻灯片11.PNG" style="width:100%; height:auto">  
-  </div>  
-  <div align="center">
-        <img src="幻灯片12.PNG" style="width:100%; height:auto">  
-  </div>  
-  <div align="center">
-        <img src="幻灯片13.PNG" style="width:100%; height:auto">  
-  </div>  
-  <div align="center">
-        <img src="幻灯片14.PNG" style="width:100%; height:auto">  
-  </div>  
 
-<h4 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://chatglm.cn/main/doc?docurl=https://sfile.chatglm.cn/doc_mobile/7b3925ee-02cc-45a4-86e8-f56cc311a3b8.pdf&conversation_id=6620f44e22c746067669acf5">质谱清言</a></li>
-</ul>
+<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><p>pytorch-GPU版本安装教程具体见<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1S5411X7FY?p=26&vd_source=1e912d633dc53740a9d212f1e75f1ba3">小土堆视频</a>。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jiesheng200103@gmail.com </span>
