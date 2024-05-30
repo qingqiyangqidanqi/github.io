@@ -243,7 +243,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="31">
-<input type="hidden" id="yelog_site_word_count" value="19.1k">
+<input type="hidden" id="yelog_site_word_count" value="19.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -436,19 +436,19 @@
         
         
         <a  class="All Latex "
-           href="/2024/04/25/latex-base7/"
+           href="/2024/04/25/latex-base6/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="latex-base7">latex-base7</span>
+            <span class="post-title" title="latex-base6">latex-base6</span>
             <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
         </a>
         
         
         <a  class="All Latex "
-           href="/2024/04/25/latex-base6/"
+           href="/2024/04/25/latex-base7/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="latex-base6">latex-base6</span>
+            <span class="post-title" title="latex-base7">latex-base7</span>
             <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
         </a>
         
@@ -634,12 +634,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-05-22 14:07:08'>2024-05-13 16:01</time>
+            Created At : <time class="date" title='Updated At: 2024-05-30 16:04:47'>2024-05-13 16:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:235</span>
+        <span>Count:307</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -658,7 +658,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E5%88%86%E5%B7%A5"><span class="toc-text">任务分工</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B"><span class="toc-text">整体流程</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E5%88%86%E5%B7%A5"><span class="toc-text">整体分工</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PPT%E5%88%B6%E4%BD%9C%EF%BC%882024%E5%B9%B45%E6%9C%8829%E6%97%A5-2024%E5%B9%B46%E6%9C%882%E6%97%A5%EF%BC%89"><span class="toc-text">PPT制作（2024年5月29日-2024年6月2日）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B"><span class="toc-text">整体流程</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -674,24 +674,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>基于LLM多智能体的师生双向人机互动激励平台及机制构建过程。</p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>基于LLM多智能体的师生双向人机互动激励平台及机制构建过程。</p>
 <span id="more"></span>
 
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><div align="center">
-        <img src="pic1.png" style="width:100%; height:auto">  
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><div align="center">
+        <img src="技术框图.png" style="width:100%; height:auto">  
 </div> 
 
 <ol>
-<li>尽量不改变原平台功能基础上进行修改，用streamlit前端+python后端+API去实现平台，时间定在6.30日之前完成平台构建。</li>
+<li>尽量不改变原平台功能基础上进行修改，用vue+flask+API去实现平台，6.30日之前完成。</li>
 <li>开源大模型微调工作，时间定在8.1日之前完成模型微调。</li>
 </ol>
-<h4 id="任务分工"><a href="#任务分工" class="headerlink" title="任务分工"></a>任务分工</h4><ol>
-<li>前端用streamlit，是否可以加上vue的一些动态样式、组件等。（李负责）</li>
-<li>后端python实现，使用flask框架。（郑负责，揭辅助）</li>
-<li>调用API、模型微调（揭负责，郑辅助）</li>
-<li>材料撰写（团队共同负责）</li>
+<h3 id="整体分工"><a href="#整体分工" class="headerlink" title="整体分工"></a>整体分工</h3><ol>
+<li>前端用vue。（李负责,郑辅助）</li>
+<li>后端flask实现。（郑负责，揭辅助）</li>
+<li>调用API、模型微调（揭负责，郑和黄辅助）</li>
+<li>材料撰写（黄负责，其他同学辅助）</li>
 </ol>
-<h4 id="整体流程"><a href="#整体流程" class="headerlink" title="整体流程"></a>整体流程</h4><ol>
+<h4 id="PPT制作（2024年5月29日-2024年6月2日）"><a href="#PPT制作（2024年5月29日-2024年6月2日）" class="headerlink" title="PPT制作（2024年5月29日-2024年6月2日）"></a>PPT制作（2024年5月29日-2024年6月2日）</h4><p>因为通知比较急，请尽快完成PPT内容，具体的内容参考项目培育申请书等资料，有问题随时咨询。</p>
+<ul>
+<li>揭：02互动激励算法部分。</li>
+<li>李：01平台介绍部分。</li>
+<li>郑：第11页的大模型算法部分（可以增加页数）。</li>
+<li>黄：03创新特色、04成果与展望。</li>
+</ul>
+<h3 id="整体流程"><a href="#整体流程" class="headerlink" title="整体流程"></a>整体流程</h3><ol>
 <li>平台构建（设计一个基本可以使用的平台）</li>
 <li>后端优化（修改智能体的流程之类的）</li>
 <li>更换模型（模型改用开源模型去进行微调，不使用API去调用）</li>
