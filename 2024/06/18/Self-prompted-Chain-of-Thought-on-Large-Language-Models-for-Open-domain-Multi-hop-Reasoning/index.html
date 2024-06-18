@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Self-prompted Chain-of-Thought on Large Language Models for Open-domain Multi-hop Reasoning | Jason&#39;s Blog</title>
+  <meta name="keywords" content=" paper ">
+  <meta name="description" content="Self-prompted Chain-of-Thought on Large Language Models for Open-domain Multi-hop Reasoning | Jason&#39;s Blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="文章等级EMNLP 2023（CCF B类）NLP领域四大顶会之一 标题、作者（单位）、期刊、发表年份Self-prompted Chain-of-Thought on Large Language Models for Open-domain   Multi-hop Reasoning王金元（上海交通大学）EMNLP 20232023年 研究问题（背景、目的及结论）在开放域问答（ODQA）中，大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Self-prompted Chain-of-Thought on Large Language Models for Open-domain Multi-hop Reasoning">
+<meta property="og:url" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="文章等级EMNLP 2023（CCF B类）NLP领域四大顶会之一 标题、作者（单位）、期刊、发表年份Self-prompted Chain-of-Thought on Large Language Models for Open-domain   Multi-hop Reasoning王金元（上海交通大学）EMNLP 20232023年 研究问题（背景、目的及结论）在开放域问答（ODQA）中，大">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%871.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%872.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%873.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%874.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%875.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%876.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%877.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%878.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%879.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%8710.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%8711.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%8712.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%8713.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%8714.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%8715.jpg">
+<meta property="og:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%8716.jpg">
+<meta property="article:published_time" content="2024-06-18T06:25:38.000Z">
+<meta property="article:modified_time" content="2024-06-18T06:38:14.385Z">
+<meta property="article:author" content="jiesheng">
+<meta property="article:tag" content="paper">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/%E5%B9%BB%E7%81%AF%E7%89%871.jpg">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>jiesheng</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/qingqiyangqidanqi"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/sheng-huo-74-25"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/qq_45833373?spm=1000.2115.3001.5343"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:jiesheng200103@gmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=10300727177&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(32)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="文章阅读">
+            
+            文章阅读
+            <small>(10)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="代码复现">
+            
+            代码复现
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="其他">
+            
+            其他
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="资源共享">
+            
+            资源共享
+            <small>(6)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="Latex">
+            
+            Latex
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/2024/04/17/about/">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="32">
+<input type="hidden" id="yelog_site_word_count" value="19.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://hexo.io/zh-cn/">hexo</a></li>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>agent</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>code</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>paper</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>scientific research</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All 文章阅读 "
+           href="/2024/06/18/Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning/"
+           data-tag="paper"
+           data-author="" >
+            <span class="post-title" title="Self-prompted Chain-of-Thought on Large Language Models for Open-domain Multi-hop Reasoning">Self-prompted Chain-of-Thought on Large Language Models for Open-domain Multi-hop Reasoning</span>
+            <span class="post-date" title="2024-06-18 14:25:38">2024/06/18</span>
+        </a>
+        
+        
+        <a  class="All 文章阅读 "
+           href="/2024/05/27/content-for-LLM-with-education/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="content for LLM with education">content for LLM with education</span>
+            <span class="post-date" title="2024-05-27 14:33:35">2024/05/27</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2024/05/13/%E5%9F%BA%E4%BA%8ELLM%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%9A%84%E5%B8%88%E7%94%9F%E5%8F%8C%E5%90%91%E4%BA%BA%E6%9C%BA%E4%BA%92%E5%8A%A8%E6%BF%80%E5%8A%B1%E5%B9%B3%E5%8F%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="基于LLM多智能体的师生双向人机互动激励平台">基于LLM多智能体的师生双向人机互动激励平台</span>
+            <span class="post-date" title="2024-05-13 16:01:55">2024/05/13</span>
+        </a>
+        
+        
+        <a  class="All 资源共享 "
+           href="/2024/05/08/IDM%E4%B8%8B%E8%BD%BD%E5%99%A8%E6%BF%80%E6%B4%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IDM下载器激活">IDM下载器激活</span>
+            <span class="post-date" title="2024-05-08 16:43:18">2024/05/08</span>
+        </a>
+        
+        
+        <a  class="All 资源共享 "
+           href="/2024/05/06/pytorch-GPU%E5%AE%89%E8%A3%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="pytorch-GPU安装">pytorch-GPU安装</span>
+            <span class="post-date" title="2024-05-06 18:04:43">2024/05/06</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2024/04/28/hexo%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo图片不显示问题解决">hexo图片不显示问题解决</span>
+            <span class="post-date" title="2024-04-28 16:56:12">2024/04/28</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2024/04/28/Latex%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%8F%8A%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%EF%BC%88%E9%99%84windows%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E7%BC%96%E8%AF%91%E8%84%9A%E6%9C%AC%EF%BC%89/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Latex中的各种文件及编译流程（附windows环境的完整编译脚本）">Latex中的各种文件及编译流程（附windows环境的完整编译脚本）</span>
+            <span class="post-date" title="2024-04-28 16:56:00">2024/04/28</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2024/04/28/Win11%E5%A6%82%E4%BD%95%E5%B0%86%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E5%A4%B9%E5%9B%BA%E5%AE%9A%E5%88%B0%E4%BB%BB%E5%8A%A1%E6%A0%8F%EF%BC%9F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Win11如何将任意文件夹固定到任务栏？">Win11如何将任意文件夹固定到任务栏？</span>
+            <span class="post-date" title="2024-04-28 16:54:09">2024/04/28</span>
+        </a>
+        
+        
+        <a  class="All 资源共享 "
+           href="/2024/04/26/mathtype/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="mathtype">mathtype</span>
+            <span class="post-date" title="2024-04-26 17:09:31">2024/04/26</span>
+        </a>
+        
+        
+        <a  class="All Latex "
+           href="/2024/04/25/latex-base2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base2">latex-base2</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All Latex "
+           href="/2024/04/25/latex-base3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base3">latex-base3</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All Latex "
+           href="/2024/04/25/latex-base4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base4">latex-base4</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All Latex "
+           href="/2024/04/25/latex-base6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base6">latex-base6</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All Latex "
+           href="/2024/04/25/latex-base7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base7">latex-base7</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All Latex "
+           href="/2024/04/25/latex-base1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base1">latex-base1</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All Latex "
+           href="/2024/04/25/latex-base5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base5">latex-base5</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All 资源共享 "
+           href="/2024/04/24/adobe/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="adobe">adobe</span>
+            <span class="post-date" title="2024-04-24 10:48:10">2024/04/24</span>
+        </a>
+        
+        
+        <a  class="All 资源共享 "
+           href="/2024/04/23/origin/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="origin">origin</span>
+            <span class="post-date" title="2024-04-23 14:17:36">2024/04/23</span>
+        </a>
+        
+        
+        <a  class="All 资源共享 "
+           href="/2024/04/23/office/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="office">office</span>
+            <span class="post-date" title="2024-04-23 14:16:32">2024/04/23</span>
+        </a>
+        
+        
+        <a  class="All 文章阅读 "
+           href="/2024/04/18/Meta-Learning-for-Low-Resource-Neural-Machine-Translation/"
+           data-tag="paper"
+           data-author="" >
+            <span class="post-title" title="Meta-Learning for Low-Resource Neural Machine Translation">Meta-Learning for Low-Resource Neural Machine Translation</span>
+            <span class="post-date" title="2024-04-18 18:54:38">2024/04/18</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2024/04/17/about/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="about">about</span>
+            <span class="post-date" title="2024-04-17 21:21:21">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 文章阅读 "
+           href="/2024/04/17/scientific-research/"
+           data-tag="scientific research"
+           data-author="" >
+            <span class="post-title" title="scientific research">scientific research</span>
+            <span class="post-date" title="2024-04-17 20:43:43">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2024/04/17/make-medio/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="make-medio">make-medio</span>
+            <span class="post-date" title="2024-04-17 20:42:04">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 文章阅读 "
+           href="/2024/01/31/AI-Agent/"
+           data-tag="paper,agent"
+           data-author="" >
+            <span class="post-title" title="AI Agent">AI Agent</span>
+            <span class="post-date" title="2024-01-31 21:51:50">2024/01/31</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2024/01/31/Linux/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux">Linux</span>
+            <span class="post-date" title="2024-01-31 15:37:20">2024/01/31</span>
+        </a>
+        
+        
+        <a  class="All 代码复现 "
+           href="/2024/01/29/AppAgent/"
+           data-tag="agent,code"
+           data-author="" >
+            <span class="post-title" title="appAgent">appAgent</span>
+            <span class="post-date" title="2024-01-29 23:58:04">2024/01/29</span>
+        </a>
+        
+        
+        <a  class="All 文章阅读 "
+           href="/2024/01/25/AppAgent-Multimodal-Agents-as-Smartphone-Users/"
+           data-tag="paper,agent"
+           data-author="" >
+            <span class="post-title" title="AppAgent: Multimodal Agents as Smartphone Users">AppAgent: Multimodal Agents as Smartphone Users</span>
+            <span class="post-date" title="2024-01-25 20:33:29">2024/01/25</span>
+        </a>
+        
+        
+        <a  class="All 文章阅读 "
+           href="/2023/12/21/Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought/"
+           data-tag="paper,cot"
+           data-author="" >
+            <span class="post-title" title="Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought">Answering-Questions-by-Meta-Reasoning-over-Multiple-Chains-of-Thought</span>
+            <span class="post-date" title="2023-12-21 14:51:15">2023/12/21</span>
+        </a>
+        
+        
+        <a  class="All 文章阅读 "
+           href="/2023/11/28/Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models/"
+           data-tag="paper,cot,agent"
+           data-author="" >
+            <span class="post-title" title="Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models">Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models</span>
+            <span class="post-date" title="2023-11-28 00:43:10">2023/11/28</span>
+        </a>
+        
+        
+        <a  class="All 文章阅读 "
+           href="/2023/11/17/Generative-Agents-Interactive-Simulacra-of-Human-Behavior/"
+           data-tag="paper,agent"
+           data-author="" >
+            <span class="post-title" title="Generative Agents: Interactive Simulacra of Human Behavior">Generative Agents: Interactive Simulacra of Human Behavior</span>
+            <span class="post-date" title="2023-11-17 00:12:01">2023/11/17</span>
+        </a>
+        
+        
+        <a  class="All 代码复现 "
+           href="/2023/11/14/metaGPT/"
+           data-tag="agent,code"
+           data-author="" >
+            <span class="post-title" title="metaGPT">metaGPT</span>
+            <span class="post-date" title="2023-11-14 23:59:59">2023/11/14</span>
+        </a>
+        
+        
+        <a  class="All 文章阅读 "
+           href="/2023/11/14/MetaGPT-Meta-Programming-for-A-Multi-Agent/"
+           data-tag="paper,agent"
+           data-author="" >
+            <span class="post-title" title="MetaGPT: Meta Programming for A Multi-Agent">MetaGPT: Meta Programming for A Multi-Agent</span>
+            <span class="post-date" title="2023-11-14 22:59:59">2023/11/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Self-prompted-Chain-of-Thought-on-Large-Language-Models-for-Open-domain-Multi-hop-Reasoning" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Self-prompted Chain-of-Thought on Large Language Models for Open-domain Multi-hop Reasoning</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="文章阅读">文章阅读</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">paper</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-06-18 14:38:14'>2024-06-18 14:25</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>Count:665</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E7%AD%89%E7%BA%A7"><span class="toc-text">文章等级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E3%80%81%E4%BD%9C%E8%80%85%EF%BC%88%E5%8D%95%E4%BD%8D%EF%BC%89%E3%80%81%E6%9C%9F%E5%88%8A%E3%80%81%E5%8F%91%E8%A1%A8%E5%B9%B4%E4%BB%BD"><span class="toc-text">标题、作者（单位）、期刊、发表年份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98%EF%BC%88%E8%83%8C%E6%99%AF%E3%80%81%E7%9B%AE%E7%9A%84%E5%8F%8A%E7%BB%93%E8%AE%BA%EF%BC%89"><span class="toc-text">研究问题（背景、目的及结论）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%88%E7%BB%93%E6%9E%9C%E4%B8%8E%E8%AE%A8%E8%AE%BA%EF%BC%89"><span class="toc-text">总结（结果与讨论）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%87%E6%8A%A5PPT%E5%86%85%E5%AE%B9"><span class="toc-text">汇报PPT内容</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="文章等级"><a href="#文章等级" class="headerlink" title="文章等级"></a>文章等级</h4><p>EMNLP 2023（CCF B类）<br>NLP领域四大顶会之一</p>
+<h4 id="标题、作者（单位）、期刊、发表年份"><a href="#标题、作者（单位）、期刊、发表年份" class="headerlink" title="标题、作者（单位）、期刊、发表年份"></a>标题、作者（单位）、期刊、发表年份</h4><p>Self-prompted Chain-of-Thought on Large Language Models for Open-domain   Multi-hop Reasoning<br>王金元（上海交通大学）<br>EMNLP 2023<br>2023年</p>
+<h4 id="研究问题（背景、目的及结论）"><a href="#研究问题（背景、目的及结论）" class="headerlink" title="研究问题（背景、目的及结论）"></a>研究问题（背景、目的及结论）</h4><p>在开放域问答（ODQA）中，大多数现有问题仅要求基于常识的单跳推理。为了进一步扩展这项任务，我们正式引入了开放域多跳推理（ODMR），通过在开放域设置中使用显式推理步骤回答多跳问题。<br>最近，大型语言模型（LLM）在无需外部语料库的情况下促进 ODQA 方面发现了显着的效用。此外，思想链（CoT）提示通过手动或自动范式更大程度地提高了大模型的推理能力。然而，现有的自动化方法缺乏质量保证，而手动方法的可扩展性有限且多样性差，阻碍了大模型的零样本能力。<br>在本文中，我们提出了自我提示的思想链（SP-CoT），这是一种自动化框架，可以由大模型通过自我提示方法大规模生产高质量的 CoT。SP-CoT 引入了高质量 ODMR 数据集的自动生成管道、用于上下文 CoT 选择的自适应采样器以及通过上下文学习进行自我提示推理。<br>在四个多跳问答基准的大量实验表明，我们提出的 SP-CoT 不仅在大规模（175B）LLM 上显着超越了之前的 SOTA 方法，而且将小规模（13B）LLM 的零样本性能提高了近一倍。 进一步的分析揭示，SP-CoT能够召回 MuSiQue-Ans 数据集上约 50% 的中间答案，具备产生直接和简洁的中间推理步骤的卓越能力。</p>
+<span id="more"></span>
+<h4 id="总结（结果与讨论）"><a href="#总结（结果与讨论）" class="headerlink" title="总结（结果与讨论）"></a>总结（结果与讨论）</h4><p>在这项工作中，我们利用大模型的能力结合自我提示CoTs来处理开放领域环境中复杂的MHQA任务，称为ODMR。我们创新的SP-CoT不仅通过超越以前的CoT提示链树立了新的基准，而且在开放领域问答方面也超越了以前SOTA。SP-CoT的一个显著特征是它在引出高质量中间推理步骤方面的熟练程度，以及它在大规模和小规模LLM中的普遍功效。我们预计，我们针对ODMR的创新自生成方法不仅将成为SP-CoT的基础，还将为未来的研究铺平道路，促进LLM向利用自生成的转变。</p>
+<h4 id="汇报PPT内容"><a href="#汇报PPT内容" class="headerlink" title="汇报PPT内容"></a>汇报PPT内容</h4><div align="center">
+        <img src="幻灯片1.jpg" style="width:100%; height:auto">  
+  </div>  
+  <div align="center">
+        <img src="幻灯片2.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片3.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片4.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片5.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片6.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片7.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片8.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片9.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片10.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片11.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片12.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片13.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片14.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片15.jpg" style="width:100%; height:auto">  
+  </div>  
+<div align="center">
+        <img src="幻灯片16.jpg" style="width:100%; height:auto">  
+  </div>  
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jiesheng200103@gmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2024-至今 jiesheng
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    #post .pjax article .article-entry>ol, #post .pjax article .article-entry>ul, #post .pjax article>ol, #post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    #post .pjax article .article-entry li>ol, #post .pjax article .article-entry li>ul,#post .pjax article li>ol, #post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #post .pjax article .article-entry>ol>li, #post .pjax article .article-entry>ul>li,#post .pjax article>ol>li, #post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    #post .pjax article .article-entry li>ol>li, #post .pjax article .article-entry li>ul>li,#post .pjax article li>ol>li, #post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    #post {
+        background: url(/img/lake-background.jpg);
+    }
+    
+    
+    #post .index {
+        background: url(/img/lake-background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
