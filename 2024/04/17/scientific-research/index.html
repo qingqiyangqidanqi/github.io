@@ -242,7 +242,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="36">
-<input type="hidden" id="yelog_site_word_count" value="22.4k">
+<input type="hidden" id="yelog_site_word_count" value="22.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -435,28 +435,10 @@
         
         
         <a  class="All Latex "
-           href="/2024/04/25/latex-base1/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="latex-base1">latex-base1</span>
-            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
-        </a>
-        
-        
-        <a  class="All Latex "
            href="/2024/04/25/latex-base2/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="latex-base2">latex-base2</span>
-            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
-        </a>
-        
-        
-        <a  class="All Latex "
-           href="/2024/04/25/latex-base4/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="latex-base4">latex-base4</span>
             <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
         </a>
         
@@ -471,10 +453,28 @@
         
         
         <a  class="All Latex "
+           href="/2024/04/25/latex-base1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base1">latex-base1</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All Latex "
            href="/2024/04/25/latex-base5/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="latex-base5">latex-base5</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All Latex "
+           href="/2024/04/25/latex-base4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base4">latex-base4</span>
             <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
         </a>
         
@@ -685,12 +685,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-21 00:40:28'>2024-04-17 20:43</time>
+            Created At : <time class="date" title='Updated At: 2024-11-22 14:29:17'>2024-04-17 20:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:1.6k</span>
+        <span>Count:1.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -739,12 +739,14 @@
 </ol>
 <h1 id="创新点-想法"><a href="#创新点-想法" class="headerlink" title="创新点&#x2F;想法"></a>创新点&#x2F;想法</h1><h2 id="总体想法"><a href="#总体想法" class="headerlink" title="总体想法"></a>总体想法</h2><ol>
 <li><strong>教育类多智能体：</strong> 智能体和教育可以结合在一起，参考吴恩达老师的想法（reflection,tool use,planning,mult-agent collaboration），通过对比各种智能体在教育方面的问题，进行迭代提问（在回答的基础上进行再次询问），或者体现进行多智能体合作，是不是效果更好？</li>
+<li><strong>学习路径规划智能体：</strong> 复现的代码生成方面的智能体，去阅读一些教育和IT结合的高级别期刊论文，通过更换论文的适用背景到教育的学习路径规划领域，去促使学习者进行高效学习（比如通过智能体对其进行编程课程&#x2F;编程练习，去给学习者提供一个合适的学习路径），其中涉及的关键词包括：遗忘曲线、有效学习、学习模型七个层级。<ol>
+<li>整个对学习者的教学过程中，我的想法：应用taskwevaer智能体，通过先制定具体的学习计划，之后通过具体计划里面的课程学习去确定它要学的知识点，通过知识点去设定具体任务，最后通过taskweaver去教授学习者完成任务是如何分解步骤、是如何解决每个步骤的过程、步骤中的代码是如何写出来的（添加对代码的逐行解释）。具体来说：第一，通过智能体A与小明同学多轮对话得出：小明想学习数据结构，同时小明对于“快速排序算法”这个知识点理解程度低；第二，通过智能体B给他布置具体任务，任务是对于1.3、2.1、3、5、1、0.8这串数字进行冒牌排序；第三，通过智能体C（调用taskwevaer）去教导小明如何分解任务步骤，并教授小明实现这个任务的代码，以及代码的所有细节和解释；第四，当小明表达出学会了，将再次执行第二和第三步骤，直到小明完全学懂为止；第五，小明学习完毕并提供反馈给智能体A。</li>
+</ol>
+</li>
 <li><strong>任务排序：</strong> 在planing中，子任务（完全不同的任务，不同类型的任务）的执行是有序的，但是如何分配任务的顺序以保证整体任务的执行效率最高，这涉及到了排序的问题。（数据结构-图：拓扑结构、关键路径）<ol>
-<li>老师想法：先复现，之后看看是否在信息模糊的情况下，实现排序的算法，同时，需要将应用型的Agent作为愿景目标去努力。</li>
 <li>可以参考BabyAGI，BabyAGI 是一个基于人工智能的任务管理系统。它使用 OpenAI 和 Pinecone API 创建、优先级排序和执行任务。该系统的主要思想是基于先前任务的结果和预定义的目标创建任务脚本然后使用 OpenAI 的LLM能力根据目标创建新任务，并使用 Pinecone 存储和检索任务结果以获得上下文的结果。<a target="_blank" rel="noopener" href="https://juejin.cn/post/7369767878781222931">点击链接查看中间部分</a></li>
 </ol>
 </li>
-<li><strong>学习路径规划智能体：</strong> 复现的代码生成方面的智能体，去阅读一些教育和IT结合的高级别期刊论文，通过更换论文的适用背景到教育的学习路径规划领域，去促使学习者进行高效学习（比如通过智能体对其进行编程课程&#x2F;编程练习，去给学习者提供一个合适的学习路径），其中涉及的关键词包括：遗忘曲线、有效学习、学习模型七个层级。</li>
 <li><strong>快慢思考复合系统：</strong> 系统1和系统2思维是来自《思考，快与慢》一书中的概念。系统1思维是大脑的快速、本能且自动化的部分，能够快速做出反应和决策。相比之下，系统2思维是更加理性、缓慢和深思熟虑的部分，用于处理复杂的问题和决策。系统1思维更加直觉性和本能性，而系统2思维更加有意识和深入思考性。<a target="_blank" rel="noopener" href="https://juejin.cn/post/7369767878781222931">点击链接查看中间部分</a></li>
 </ol>
 <h3 id="（Similarity-based-task-timely-termination-method-for-image-based-intelligent-agents）论文想法"><a href="#（Similarity-based-task-timely-termination-method-for-image-based-intelligent-agents）论文想法" class="headerlink" title="（Similarity-based task timely termination method for image-based intelligent agents）论文想法"></a>（Similarity-based task timely termination method for image-based intelligent agents）论文想法</h3><ol>
