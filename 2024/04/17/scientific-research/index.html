@@ -242,7 +242,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="36">
-<input type="hidden" id="yelog_site_word_count" value="22.7k">
+<input type="hidden" id="yelog_site_word_count" value="22.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -435,6 +435,15 @@
         
         
         <a  class="All Latex "
+           href="/2024/04/25/latex-base1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base1">latex-base1</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All Latex "
            href="/2024/04/25/latex-base2/"
            data-tag=""
            data-author="" >
@@ -453,28 +462,19 @@
         
         
         <a  class="All Latex "
-           href="/2024/04/25/latex-base1/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="latex-base1">latex-base1</span>
-            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
-        </a>
-        
-        
-        <a  class="All Latex "
-           href="/2024/04/25/latex-base5/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="latex-base5">latex-base5</span>
-            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
-        </a>
-        
-        
-        <a  class="All Latex "
            href="/2024/04/25/latex-base4/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="latex-base4">latex-base4</span>
+            <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
+        </a>
+        
+        
+        <a  class="All Latex "
+           href="/2024/04/25/latex-base7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="latex-base7">latex-base7</span>
             <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
         </a>
         
@@ -489,10 +489,10 @@
         
         
         <a  class="All Latex "
-           href="/2024/04/25/latex-base7/"
+           href="/2024/04/25/latex-base5/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="latex-base7">latex-base7</span>
+            <span class="post-title" title="latex-base5">latex-base5</span>
             <span class="post-date" title="2024-04-25 15:39:52">2024/04/25</span>
         </a>
         
@@ -607,7 +607,7 @@
         
         <a  class="All 文章阅读 "
            href="/2023/11/28/Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models/"
-           data-tag="paper,cot,agent"
+           data-tag="paper,agent,cot"
            data-author="" >
             <span class="post-title" title="Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models">Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models</span>
             <span class="post-date" title="2023-11-28 00:43:10">2023/11/28</span>
@@ -685,12 +685,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-11-22 14:29:17'>2024-04-17 20:43</time>
+            Created At : <time class="date" title='Updated At: 2024-11-28 14:44:34'>2024-04-17 20:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:1.9k</span>
+        <span>Count:2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -740,7 +740,19 @@
 <h1 id="创新点-想法"><a href="#创新点-想法" class="headerlink" title="创新点&#x2F;想法"></a>创新点&#x2F;想法</h1><h2 id="总体想法"><a href="#总体想法" class="headerlink" title="总体想法"></a>总体想法</h2><ol>
 <li><strong>教育类多智能体：</strong> 智能体和教育可以结合在一起，参考吴恩达老师的想法（reflection,tool use,planning,mult-agent collaboration），通过对比各种智能体在教育方面的问题，进行迭代提问（在回答的基础上进行再次询问），或者体现进行多智能体合作，是不是效果更好？</li>
 <li><strong>学习路径规划智能体：</strong> 复现的代码生成方面的智能体，去阅读一些教育和IT结合的高级别期刊论文，通过更换论文的适用背景到教育的学习路径规划领域，去促使学习者进行高效学习（比如通过智能体对其进行编程课程&#x2F;编程练习，去给学习者提供一个合适的学习路径），其中涉及的关键词包括：遗忘曲线、有效学习、学习模型七个层级。<ol>
-<li>整个对学习者的教学过程中，我的想法：应用taskwevaer智能体，通过先制定具体的学习计划，之后通过具体计划里面的课程学习去确定它要学的知识点，通过知识点去设定具体任务，最后通过taskweaver去教授学习者完成任务是如何分解步骤、是如何解决每个步骤的过程、步骤中的代码是如何写出来的（添加对代码的逐行解释）。具体来说：第一，通过智能体A与小明同学多轮对话得出：小明想学习数据结构，同时小明对于“快速排序算法”这个知识点理解程度低；第二，通过智能体B给他布置具体任务，任务是对于1.3、2.1、3、5、1、0.8这串数字进行冒牌排序；第三，通过智能体C（调用taskwevaer）去教导小明如何分解任务步骤，并教授小明实现这个任务的代码，以及代码的所有细节和解释；第四，当小明表达出学会了，将再次执行第二和第三步骤，直到小明完全学懂为止；第五，小明学习完毕并提供反馈给智能体A。</li>
+<li>我的想法：<ol>
+<li>应用taskwevaer智能体，通过先制定具体的学习计划，之后通过具体计划里面的课程学习去确定它要学的知识点，通过知识点去设定具体任务，最后通过taskweaver去教授学习者完成任务是如何分解步骤、是如何解决每个步骤的过程、步骤中的代码是如何写出来的（添加对代码的逐行解释）。</li>
+<li>具体来说：第一，通过智能体A与小明同学多轮对话得出：小明想学习数据结构，同时小明对于“快速排序算法”这个知识点理解程度低；第二，通过智能体B给他布置具体任务，任务是对于1.3、2.1、3、5、1、0.8这串数字进行冒牌排序；第三，通过智能体C（调用taskwevaer）去教导小明如何分解任务步骤，并教授小明实现这个任务的代码，以及代码的所有细节和解释；第四，重复执行第二和第三步骤，直到小明完全学懂为止（通过教学方法科学判断出其已经学会）；第五，小明学习完毕并提供反馈给智能体A。</li>
+</ol>
+</li>
+<li>导师想法：<ol>
+<li>自动更新课程内容提纲（比如从数据结构的考试、知识大纲，从考试出现率等出发），制定学习计划。</li>
+<li>制定学习路径，查漏补缺知识点，检测知识点掌握程度。</li>
+<li>基于测试的学习让学生掌握知识点内容。</li>
+<li>重复执行第二第三点，再检测学生并记录学生的学习过程。</li>
+<li>四大知识体系：知识点-&gt;这一章节内容-&gt;综合性大作业-&gt;真实的项目</li>
+</ol>
+</li>
 </ol>
 </li>
 <li><strong>任务排序：</strong> 在planing中，子任务（完全不同的任务，不同类型的任务）的执行是有序的，但是如何分配任务的顺序以保证整体任务的执行效率最高，这涉及到了排序的问题。（数据结构-图：拓扑结构、关键路径）<ol>
