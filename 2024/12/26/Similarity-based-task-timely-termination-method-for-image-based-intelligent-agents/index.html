@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>metaGPT | Jason&#39;s Blog</title>
-  <meta name="keywords" content=" agent , code ">
-  <meta name="description" content="metaGPT | Jason&#39;s Blog">
+  <title>Similarity-based task timely termination method for image-based intelligent agents | Jason&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Similarity-based task timely termination method for image-based intelligent agents | Jason&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="摘要">
 <meta property="og:type" content="article">
@@ -684,41 +684,24 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-metaGPT" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Similarity-based-task-timely-termination-method-for-image-based-intelligent-agents" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">metaGPT</h1>
+        <h1 class="article-title">Similarity-based task timely termination method for image-based intelligent agents</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="代码复现">代码复现</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color1">agent</a>
-            
-            <a class="color5">code</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-04-17 19:54:37'>2023-11-14 23:59</time>
+            Created At : <time class="date" title='Updated At: 2024-12-26 14:24:24'>2024-12-26 14:24</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:508</span>
+        <span>Count:1.3k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -737,7 +720,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%98%E8%A6%81-1"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88Similarity-based-task-timely-termination-method-for-image-based-intelligent-agents%EF%BC%89%E8%AE%BA%E6%96%87%E6%83%B3%E6%B3%95"><span class="toc-text">（Similarity-based task timely termination method for image-based intelligent agents）论文想法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9"><span class="toc-text">内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%B8%88%E6%B2%9F%E9%80%9A"><span class="toc-text">导师沟通</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%95%E7%A8%BF%E4%BC%9A%E8%AE%AE"><span class="toc-text">投稿会议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%95%E7%A8%BF%E6%9C%9F%E5%88%8A"><span class="toc-text">投稿期刊</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -753,17 +736,156 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><p>MetaGPT是一个先进的多智能体开源框架，专注于解决大模型落地应用的实际问题。它通过模拟软件公司进行软件设计、架构图、代码repo等功能。    </p>
-<span id="more"></span>
+        <h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><span id="more"></span>
 
-<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><ol>
-<li>metaGPT介绍<br>- Assign different roles to GPTs to form a collaborative software entity for complex tasks.<br>- MetaGPT takes a one line requirement as input and outputs user stories &#x2F; competitive analysis &#x2F; requirements &#x2F; data structures &#x2F; APIs &#x2F; documents, etc.<br>- Internally, MetaGPT includes product managers &#x2F; architects &#x2F; project managers &#x2F; engineers. It provides the entire process of a software company along with carefully orchestrated SOPs.  </li>
-<li>metaGPT复现<br>我首先部署到本地，具体步骤可参考<a target="_blank" rel="noopener" href="https://github.com/geekan/MetaGPT/blob/main/docs/README_CN.md">github</a>。我使用的是oepnAI的API（国内访问不了<a target="_blank" rel="noopener" href="https://api.openai.com/">接口地址</a>，推荐使用反代服务<a target="_blank" rel="noopener" href="https://openkey.cloud/docs">OpenKey</a>）。我花费大约0.1美元的成本成功生成了一个贪吃蛇的小游戏。</li>
-<li>个人心得<br>通过复现MetaGPT，我深切地体会到了科技发展的迅猛，简直就像是指数爆炸一样。从科研的角度来看，技术的更新换代速度太快，各种各样的模型层出不穷，以至于写论文的速度根本跟不上。从IT程序员的视角来看，MetaGPT已经替代了大部分程序员的代码编写工作，但目前还处于初级阶段，复杂的程序可能暂时还无法实现，不过由于项目已经开源，随着时间的推移，可能会产生意想不到的成果。对于人工智能公司来说，初创小公司如果没有自己独特的创新理念，那么肯定会在时代的洪流中被淘汰，但大型公司则不同，像OpenAI、阿里等巨头，凭借自身的底蕴，可以在这场竞争中生存下去，并不断壮大自己。从人类社会的角度来看，Agent未来真的有可能成为一个高级物种，成为社会的一员，那么“它”或者“他、她”究竟是朋友还是敌人呢？这仍是一个值得我们深思的问题。</li>
+<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><h3 id="摘要-1"><a href="#摘要-1" class="headerlink" title="摘要"></a>摘要</h3><p>投稿论文”Similarity based task timely termination method for image based intelligent agents”的过程。</p>
+<!--more-->
+
+<h3 id="（Similarity-based-task-timely-termination-method-for-image-based-intelligent-agents）论文想法"><a href="#（Similarity-based-task-timely-termination-method-for-image-based-intelligent-agents）论文想法" class="headerlink" title="（Similarity-based task timely termination method for image-based intelligent agents）论文想法"></a>（Similarity-based task timely termination method for image-based intelligent agents）论文想法</h3><ol>
+<li>设置了阈值条件（通过定义一个方法来比对某一步骤的前后结果图，定义了相似度，用来评判是否已经完成了，杜绝了多余的资源消耗（时间成本，代币成本）<ol>
+<li>不同类app设定不同的阈值（将app归类为 高&#x2F;中&#x2F;低 阈值）</li>
+<li>是否可以定义一种终结模式框架？</li>
 </ol>
-  <div align="center">
-    <img src="metaGPT.png" style="width:100%; height:auto">
-  </div>
+</li>
+<li>提示语方面的改进（COT方法&#x2F;回溯反馈流机制）<ol>
+<li>Chain-of-Thought (CoT) Prompting（思维链），通过在增加逻辑推理步骤，实现比较复杂的任务。<ol>
+<li>贪婪算法</li>
+<li>SC方法</li>
+<li>MCR方法</li>
+<li>Plan and Solve(sp任务) 也是一种思维链方法，主要要求模型理解问题，提取变量和相关值，并逐步指定计划。</li>
+</ol>
+</li>
+<li>ReAct技术（Reasoning + Action） ReAct是将推理和执行合并，可以动态推理和执行，通过不断的think和action，获取最终的答案。</li>
+<li>情景学习（如果要适用于图片领域的话，就需要提供一些图片类的模板，在appAgent中，设计 不给予图片模板&#x2F;给与单个图片模板&#x2F;给与多个图片模板，测试不同的准确度问题。）<ol>
+<li>zero-shot方法(只提供prompt，不提供示例)</li>
+<li>one-shot,two-shot,N-shot等方法，即提供1、2 或 N 个示例，以提高模型的准确性</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>整个逻辑方面，appAgent作为执行者，上面能不能加个决策层（与用户进行交互）。</li>
+<li>能不能将自动探索以及demo参考 设置权重，让他们两个综合去评判下一步操作。</li>
+<li>中间结构输出是否要规定其标准化（参考metaGPT）</li>
+<li>反馈机制（executable feedback mechanism）</li>
+<li>评估方面的改进<ol>
+<li>时间和代币的成本（稳健性和有效性）(执行的快慢，效率问题)</li>
+<li>完成率</li>
+<li>鲁棒性（如何评判鲁棒性？）</li>
+</ol>
+</li>
+<li>处理数据集方面的改进与总结</li>
+<li>example用于教育领域的APP。</li>
+<li>能不能在一些需要推理能力的应用方面入手，需要思考的应用，像推理题目等，然后和原本的appagent对比，体现效果（参考一下玩游戏的agent）</li>
+<li>对比一下：以前流程自动化，实现自动完成任务的程序</li>
+<li>智能体分为文本类&#x2F;图像类&#x2F;声音类&#x2F;视频类，能不能扩展到其他的类？声音类agent(似然比测度)视频类agent（同时设定图片和声音两种终止模式）</li>
+</ol>
+<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p>找导师沟通一下论文的内容，当导师通过了以后再进行投稿。</p>
+<p>投的期刊是”expert systems”，级别是SCI四区。（内容不符被拒）</p>
+<p>转投期刊是”Scientific Reports”，级别是SCI二区。</p>
+<p>投一些会议论文试试看，看看水平。(选择CCF上的高水平会议)</p>
+<p>最后投期刊论文。</p>
+<h3 id="导师沟通"><a href="#导师沟通" class="headerlink" title="导师沟通"></a>导师沟通</h3><table>
+<thead>
+<tr>
+<th align="center">导师名称</th>
+<th align="center">沟通时间</th>
+<th align="center">回复意见</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">DongLigang</td>
+<td align="center">2024.04.25</td>
+<td align="center">1.摘要的英文翻译部分有问题。2.加入创新点的总结部分。3.首次出现的名称不用缩写，之后出现需要写缩写。3.看看论文的篇幅部分是否满足期刊的要求，可以看看该期刊发表的论文作为参考。4.每个标题下面都需要有一段话作为帽子。5.paper和article统一一下，全文都使用paper。5.可以先投会议看看意见。</td>
+</tr>
+<tr>
+<td align="center">DongLigang</td>
+<td align="center">2024.04.26</td>
+<td align="center">1.参考文献引用部分统一风格。2.英语语法细节问题。3.专项名词缩写部分全部做一遍检索。4.插入基金项目。4.关键词大小写根据期刊往届论文统一。</td>
+</tr>
+<tr>
+<td align="center">DongLigang</td>
+<td align="center">2024.04.27</td>
+<td align="center">1.一些英语语法和翻译问题。</td>
+</tr>
+<tr>
+<td align="center">DongLigang</td>
+<td align="center">2024.09.19</td>
+<td align="center">修改返修意见信：（1）格式问题。（2）表达语气需要客气。</td>
+</tr>
+<tr>
+<td align="center">DongLigang</td>
+<td align="center">2024.11.10</td>
+<td align="center">修改返修意见信：（1）每次回答问题尽量先重复一下专家的话语和词汇，表达对其问题重视并接近他需要的回答。</td>
+</tr>
+</tbody></table>
+<h3 id="投稿会议"><a href="#投稿会议" class="headerlink" title="投稿会议"></a>投稿会议</h3><table>
+<thead>
+<tr>
+<th align="center">会议名称</th>
+<th align="center">截至投稿时间</th>
+<th align="center">投稿时间</th>
+<th align="center">回复意见</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.ais.cn/attendees/index/VYEEMN">第三届电子信息技术国际学术会议（EIT 2024）</a></td>
+<td align="center">2024年04月30日18:00</td>
+<td align="center">不投</td>
+<td align="center">Here’s this</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.ais.cn/attendees/index/QMF3EI">2024年第四届人工智能、自动化与高性能计算国际会议（AIAHPC 2024）</a></td>
+<td align="center">2024年4月28日23:59</td>
+<td align="center">不投</td>
+<td align="center">Here’s this</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.ais.cn/attendees/index/JAM73I">第六届电子与通信，网络与计算机技术国际学术会议 （ECNCT 2024）</a></td>
+<td align="center">无</td>
+<td align="center">不投</td>
+<td align="center">Here’s this</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.ais.cn/attendees/index/QNQN6R">第四届机器学习与智能系统工程国际学术会议（MLISE 2024)</a></td>
+<td align="center">2024年4月26日</td>
+<td align="center">不投</td>
+<td align="center">Here’s this</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.ais.cn/attendees/index/FMV6JN">第七届先进电子材料、计算机与软件工程国际学术会议(AEMCSE 2024）</a></td>
+<td align="center">2024年4月29日</td>
+<td align="center">不投</td>
+<td align="center">Here’s this</td>
+</tr>
+</tbody></table>
+<h3 id="投稿期刊"><a href="#投稿期刊" class="headerlink" title="投稿期刊"></a>投稿期刊</h3><table>
+<thead>
+<tr>
+<th align="center">期刊名称</th>
+<th align="center">截至投稿时间</th>
+<th align="center">投稿时间</th>
+<th align="center">回复意见</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">expert systems</td>
+<td align="center">无</td>
+<td align="center">2024.04.28</td>
+<td align="center">与杂志期刊不符</td>
+</tr>
+<tr>
+<td align="center">Scientific Reports</td>
+<td align="center">无</td>
+<td align="center">2024.04.28</td>
+<td align="center">返修一次</td>
+</tr>
+<tr>
+<td align="center">Scientific Reports</td>
+<td align="center">无</td>
+<td align="center">2024.10.28</td>
+<td align="center">返修一次</td>
+</tr>
+</tbody></table>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jiesheng200103@gmail.com </span>
