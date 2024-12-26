@@ -241,7 +241,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="38">
-<input type="hidden" id="yelog_site_word_count" value="24.7k">
+<input type="hidden" id="yelog_site_word_count" value="24.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -624,7 +624,7 @@
         
         <a  class="All 文章阅读 "
            href="/2023/11/28/Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models/"
-           data-tag="paper,agent,cot"
+           data-tag="paper,cot,agent"
            data-author="" >
             <span class="post-title" title="Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models">Self-Consistency-Improves-Chain-of-Thought-Reasoning-in-Language-Models</span>
             <span class="post-date" title="2023-11-28 00:43:10">2023/11/28</span>
@@ -702,12 +702,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-12-03 00:59:36'>2024-04-17 20:43</time>
+            Created At : <time class="date" title='Updated At: 2024-12-26 14:17:54'>2024-04-17 20:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:1.9k</span>
+        <span>Count:1.3k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -726,7 +726,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E7%A0%94%E6%B5%81%E7%A8%8B"><span class="toc-text">科研流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E7%82%B9-%E6%83%B3%E6%B3%95"><span class="toc-text">创新点&#x2F;想法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E6%83%B3%E6%B3%95"><span class="toc-text">总体想法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88Similarity-based-task-timely-termination-method-for-image-based-intelligent-agents%EF%BC%89%E8%AE%BA%E6%96%87%E6%83%B3%E6%B3%95"><span class="toc-text">（Similarity-based task timely termination method for image-based intelligent agents）论文想法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%85%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="toc-text">待学习内容</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E7%A0%94%E6%B5%81%E7%A8%8B"><span class="toc-text">科研流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E7%82%B9-%E6%83%B3%E6%B3%95"><span class="toc-text">创新点&#x2F;想法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E6%83%B3%E6%B3%95"><span class="toc-text">总体想法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%85%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="toc-text">待学习内容</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -777,44 +777,6 @@
 </ol>
 </li>
 <li><strong>快慢思考复合系统：</strong> 系统1和系统2思维是来自《思考，快与慢》一书中的概念。系统1思维是大脑的快速、本能且自动化的部分，能够快速做出反应和决策。相比之下，系统2思维是更加理性、缓慢和深思熟虑的部分，用于处理复杂的问题和决策。系统1思维更加直觉性和本能性，而系统2思维更加有意识和深入思考性。<a target="_blank" rel="noopener" href="https://juejin.cn/post/7369767878781222931">点击链接查看中间部分</a></li>
-</ol>
-<h3 id="（Similarity-based-task-timely-termination-method-for-image-based-intelligent-agents）论文想法"><a href="#（Similarity-based-task-timely-termination-method-for-image-based-intelligent-agents）论文想法" class="headerlink" title="（Similarity-based task timely termination method for image-based intelligent agents）论文想法"></a>（Similarity-based task timely termination method for image-based intelligent agents）论文想法</h3><ol>
-<li>设置了阈值条件（通过定义一个方法来比对某一步骤的前后结果图，定义了相似度，用来评判是否已经完成了，杜绝了多余的资源消耗（时间成本，代币成本）<ol>
-<li>不同类app设定不同的阈值（将app归类为 高&#x2F;中&#x2F;低 阈值）</li>
-<li>是否可以定义一种终结模式框架？</li>
-</ol>
-</li>
-<li>提示语方面的改进（COT方法&#x2F;回溯反馈流机制）<ol>
-<li>Chain-of-Thought (CoT) Prompting（思维链），通过在增加逻辑推理步骤，实现比较复杂的任务。<ol>
-<li>贪婪算法</li>
-<li>SC方法</li>
-<li>MCR方法</li>
-<li>Plan and Solve(sp任务) 也是一种思维链方法，主要要求模型理解问题，提取变量和相关值，并逐步指定计划。</li>
-</ol>
-</li>
-<li>ReAct技术（Reasoning + Action） ReAct是将推理和执行合并，可以动态推理和执行，通过不断的think和action，获取最终的答案。</li>
-<li>情景学习（如果要适用于图片领域的话，就需要提供一些图片类的模板，在appAgent中，设计 不给予图片模板&#x2F;给与单个图片模板&#x2F;给与多个图片模板，测试不同的准确度问题。）<ol>
-<li>zero-shot方法(只提供prompt，不提供示例)</li>
-<li>one-shot,two-shot,N-shot等方法，即提供1、2 或 N 个示例，以提高模型的准确性</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>整个逻辑方面，appAgent作为执行者，上面能不能加个决策层（与用户进行交互）。</li>
-<li>能不能将自动探索以及demo参考 设置权重，让他们两个综合去评判下一步操作。</li>
-<li>中间结构输出是否要规定其标准化（参考metaGPT）</li>
-<li>反馈机制（executable feedback mechanism）</li>
-<li>评估方面的改进<ol>
-<li>时间和代币的成本（稳健性和有效性）(执行的快慢，效率问题)</li>
-<li>完成率</li>
-<li>鲁棒性（如何评判鲁棒性？）</li>
-</ol>
-</li>
-<li>处理数据集方面的改进与总结</li>
-<li>example用于教育领域的APP。</li>
-<li>能不能在一些需要推理能力的应用方面入手，需要思考的应用，像推理题目等，然后和原本的appagent对比，体现效果（参考一下玩游戏的agent）</li>
-<li>对比一下：以前流程自动化，实现自动完成任务的程序</li>
-<li>智能体分为文本类&#x2F;图像类&#x2F;声音类&#x2F;视频类，能不能扩展到其他的类？声音类agent(似然比测度)视频类agent（同时设定图片和声音两种终止模式）</li>
 </ol>
 <h1 id="待学习内容"><a href="#待学习内容" class="headerlink" title="待学习内容"></a>待学习内容</h1><ol>
 <li>看下图<div align="center">
